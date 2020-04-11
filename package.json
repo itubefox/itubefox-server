@@ -1,0 +1,20 @@
+{
+  "name": "itubefox-server",
+  "version": "1.0.0",
+  "description": "Servidor iTubefox.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "João Batista",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "request": "^2.88.2"
+  }
+}
