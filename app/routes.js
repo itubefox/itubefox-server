@@ -40,7 +40,7 @@ function routes(host) {
 
                 obj_final.details = data.args.player_response.videoDetails;
                 obj_final.thumbnail = data.args.player_response.videoDetails.thumbnail.thumbnails[(data.args.player_response.videoDetails.thumbnail.thumbnails.length - 1)].url;
-                obj_final.filename = encodeURIComponent(filename_normalize('iTubefox ' + data.args.player_response.videoDetails.title) + '.mp3');
+                obj_final.filename = encodeURIComponent('iTubefox - ' + filename_normalize(data.args.player_response.videoDetails.title) + '.mp3');
 
                 res.json(obj_final);
             });
@@ -70,7 +70,7 @@ function routes(host) {
 
                 obj_final.details = data.args.player_response.videoDetails;
                 obj_final.thumbnail = data.args.player_response.videoDetails.thumbnail.thumbnails[(data.args.player_response.videoDetails.thumbnail.thumbnails.length - 1)].url;
-                obj_final.filename = encodeURIComponent(filename_normalize('iTudefox ' + data.args.player_response.videoDetails.title) + '.mp4');
+                obj_final.filename = encodeURIComponent('iTubefox - ' + filename_normalize(data.args.player_response.videoDetails.title) + '.mp4');
 
                 res.json(obj_final);
             });
@@ -82,9 +82,9 @@ function routes(host) {
 
 function filename_normalize(filename) {
     return filename.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-        .replace(/([^\w]+|\s+)/g, '-')
-        .replace(/\-\-+/g, '-')
-        .replace(/(^-+|-+$)/, '');
+        .replace(/([^\w]+|\s+)/g, ' ')
+        .replace(/\ \ +/g, ' ')
+        .replace(/(^ +| +$)/, '');
 }
 
 function is_cipher(data) {
